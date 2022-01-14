@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UvlotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccomodationType">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationStatu">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmployerLoanDetail">
+    <Key>
+      <PropertyRef Name="LoanApplication_FK" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanApplication_FK" Type="Int32" Nullable="false" />
+    <Property Name="EmployerID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OfficialEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Occupation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="EmploymentStatus_FK" Type="Int32" />
+    <Property Name="Department" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NetMonthlyIncome" Type="Double" />
+    <Property Name="LandMark" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ClosestBusStop" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LGA_FK" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LengthOfServiceInMth" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmploymentStatu">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InstitutionAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionEmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionPhoneNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPhoneNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContactEmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="HeadOfInstition" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="LGA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State_FK" Type="Int32" Nullable="false" />
+    <Property Name="Audit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoanApplication">
+    <Key>
+      <PropertyRef Name="LoanRefNumber" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanRefNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoanProduct_FK" Type="Int32" />
+    <Property Name="Title_FK" Type="Int32" />
+    <Property Name="Surname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Othernames" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Gender_FK" Type="Int32" />
+    <Property Name="MaritalStatus_FK" Type="Int32" />
+    <Property Name="MeansOfID_FK" Type="Int32" />
+    <Property Name="IdentficationNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Landmark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ClosestBusStop" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StateofResidence_FK" Type="Int32" />
+    <Property Name="LGA_FK" Type="Int32" />
+    <Property Name="AccomodationType_FK" Type="Int32" />
+    <Property Name="Organization" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicantID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NOK_FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NOK_Relationship" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NOK_PhoneNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NOK_EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NOK_HomeAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LoanAmount" Type="Double" />
+    <Property Name="LoanTenure" Type="Int32" />
+    <Property Name="RepaymentMethod_FK" Type="Int32" />
+    <Property Name="ExistingLoan" Type="Boolean" />
+    <Property Name="ExistingLoan_OutstandingAmount" Type="Double" />
+    <Property Name="ExistingLoan_NoOfMonthsLeft" Type="Int32" />
+    <Property Name="BankCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="BVN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ApplicationStatus_FK" Type="Int32" />
+    <Property Name="LoanComment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoanApproval">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LoanApplication_FK" Type="Int32" />
+    <Property Name="CommentBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationStatus_FK" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoanLedger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Institution_FK" Type="Int32" />
+    <Property Name="ApplicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranxDate" Type="DateTime" Precision="3" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="RefNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PartnerRefNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoanProduct">
+    <Key>
+      <PropertyRef Name="Institution_FK" />
+      <PropertyRef Name="LoanProduct1" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Institution_FK" Type="Int32" Nullable="false" />
+    <Property Name="LoanType_FK" Type="Int32" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoanProduct1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoanAmount" Type="Double" />
+    <Property Name="InterestValue" Type="Double" />
+    <Property Name="RepaymentAmount" Type="Double" />
+    <Property Name="LoanTenure_FK" Type="Int32" />
+    <Property Name="MaxLoanTenure" Type="Int32" />
+    <Property Name="GracePeriod" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_FK" Type="Int32" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoansLedger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Institution_FK" Type="Int32" />
+    <Property Name="trnDate" Type="DateTime" Precision="3" />
+    <Property Name="Debit" Type="Double" />
+    <Property Name="Credit" Type="Double" />
+    <Property Name="RefNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="LoanTenure">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="Audit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoanType">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MaritalStatu">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MeansOfIdentification">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NigerianState">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Audit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+    <Property Name="Country_FK" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="PageName" />
+    </Key>
+    <Property Name="PageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PageAuthentication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Page_FK" Type="Int32" />
+    <Property Name="Role_FK" Type="Int32" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="PartnerID" />
+      <PropertyRef Name="PartnerKey" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_FK" Type="Int32" />
+    <Property Name="PartnerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartnerKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TokenVal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="myTokenTime" Type="Double" />
+  </EntityType>
+  <EntityType Name="RepaymentMethod">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="StudentLoanDetail">
+    <Key>
+      <PropertyRef Name="LoanApplication_FK" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanApplication_FK" Type="Int32" Nullable="false" />
+    <Property Name="MatricNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Institution" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Faculty" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CourseOfStudy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YearOfAdmission" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YearOfExpectedCompletion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentLevel_FK" Type="Int32" />
+    <Property Name="CurrentSemester_FK" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="StudentRecord">
+    <Key>
+      <PropertyRef Name="Institution_FK" />
+      <PropertyRef Name="MatriculationNumber" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Institution_FK" Type="Int32" Nullable="false" />
+    <Property Name="MatriculationNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Othernames" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Faculty" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Deparment" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreditLimit" Type="Double" />
+    <Property Name="NoOfBorrows" Type="Int32" />
+    <Property Name="AmountBorrowed" Type="Double" />
+    <Property Name="OutstandingBalance" Type="Double" />
+    <Property Name="CustomMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Registered" Type="Int32" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaswordVal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ResetPassword" Type="Int32" />
+    <Property Name="ValueDate" Type="DateTime" Precision="3" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="PinNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title_FK" Type="Int32" />
+    <Property Name="GenderID" Type="Int32" />
+    <Property Name="EmploymentStatus_FK" Type="Int32" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferralCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MyReferralCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Audit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferralLevel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="User_FK" />
+      <PropertyRef Name="Role_FK" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_FK" Type="Int32" Nullable="false" />
+    <Property Name="Role_FK" Type="Int32" Nullable="false" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="UvlotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccomodationTypes" EntityType="Self.AccomodationType" />
+    <EntitySet Name="ApplicationStatus" EntityType="Self.ApplicationStatu" />
+    <EntitySet Name="Banks" EntityType="Self.Bank" />
+    <EntitySet Name="EmployerLoanDetails" EntityType="Self.EmployerLoanDetail" />
+    <EntitySet Name="EmploymentStatus" EntityType="Self.EmploymentStatu" />
+    <EntitySet Name="Institutions" EntityType="Self.Institution" />
+    <EntitySet Name="LGAs" EntityType="Self.LGA" />
+    <EntitySet Name="LoanApplications" EntityType="Self.LoanApplication" />
+    <EntitySet Name="LoanApprovals" EntityType="Self.LoanApproval" />
+    <EntitySet Name="LoanLedgers" EntityType="Self.LoanLedger" />
+    <EntitySet Name="LoanProducts" EntityType="Self.LoanProduct" />
+    <EntitySet Name="LoansLedgers" EntityType="Self.LoansLedger" />
+    <EntitySet Name="LoanTenures" EntityType="Self.LoanTenure" />
+    <EntitySet Name="LoanTypes" EntityType="Self.LoanType" />
+    <EntitySet Name="MaritalStatus" EntityType="Self.MaritalStatu" />
+    <EntitySet Name="MeansOfIdentifications" EntityType="Self.MeansOfIdentification" />
+    <EntitySet Name="NigerianStates" EntityType="Self.NigerianState" />
+    <EntitySet Name="Pages" EntityType="Self.Page" />
+    <EntitySet Name="PageAuthentications" EntityType="Self.PageAuthentication" />
+    <EntitySet Name="Partners" EntityType="Self.Partner" />
+    <EntitySet Name="RepaymentMethods" EntityType="Self.RepaymentMethod" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="StudentLoanDetails" EntityType="Self.StudentLoanDetail" />
+    <EntitySet Name="StudentRecords" EntityType="Self.StudentRecord" />
+    <EntitySet Name="Titles" EntityType="Self.Title" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <FunctionImport Name="UpdatePartner">
+      <Parameter Name="myTimer" Mode="In" Type="Double" />
+      <Parameter Name="myTokenVal" Mode="In" Type="String" />
+      <Parameter Name="partnerID" Mode="In" Type="String" />
+      <Parameter Name="RecID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="BanksManagers" EntityType="UvlotModel.BanksManager" />
+  </EntityContainer>
+  <EntityType Name="BanksManager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lastname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Othernames" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnrollmentBranch" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nationlaity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAddress" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="VerifiedStatus" Type="Int32" />
+    <Property Name="ServiceResponse" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="ValueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UvlotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccomodationType">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationStatus">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BanksManager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Othernames" Type="nvarchar" MaxLength="150" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnrollmentBranch" Type="nvarchar" MaxLength="500" />
+    <Property Name="Nationlaity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Marital_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactAddress" Type="nvarchar" MaxLength="350" />
+    <Property Name="VerifiedStatus" Type="int" />
+    <Property Name="ServiceResponse" Type="nvarchar" MaxLength="350" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmployerLoanDetail">
+    <Key>
+      <PropertyRef Name="LoanApplication_FK" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanApplication_FK" Type="int" Nullable="false" />
+    <Property Name="EmployerID" Type="nvarchar" MaxLength="150" />
+    <Property Name="OfficialEmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="150" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmploymentStatus_FK" Type="int" />
+    <Property Name="Department" Type="nvarchar" MaxLength="150" />
+    <Property Name="NetMonthlyIncome" Type="float" />
+    <Property Name="LandMark" Type="nvarchar" MaxLength="150" />
+    <Property Name="ClosestBusStop" Type="nvarchar" MaxLength="150" />
+    <Property Name="LGA_FK" Type="nvarchar" MaxLength="150" />
+    <Property Name="LengthOfServiceInMth" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="EmploymentStatus">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InstitutionAddress" Type="nvarchar" MaxLength="250" />
+    <Property Name="InstitutionEmailAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="InstitutionPhoneNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactPhoneNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactEmailAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="HeadOfInstition" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LGA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="State_FK" Type="int" Nullable="false" />
+    <Property Name="Audit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsVisible" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoanApplication">
+    <Key>
+      <PropertyRef Name="LoanRefNumber" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanRefNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoanProduct_FK" Type="int" />
+    <Property Name="Title_FK" Type="int" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Othernames" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gender_FK" Type="int" />
+    <Property Name="MaritalStatus_FK" Type="int" />
+    <Property Name="MeansOfID_FK" Type="int" />
+    <Property Name="IdentficationNumber" Type="nvarchar" MaxLength="150" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="Landmark" Type="nvarchar" MaxLength="250" />
+    <Property Name="ClosestBusStop" Type="nvarchar" MaxLength="250" />
+    <Property Name="StateofResidence_FK" Type="int" />
+    <Property Name="LGA_FK" Type="int" />
+    <Property Name="AccomodationType_FK" Type="int" />
+    <Property Name="Organization" Type="nvarchar" MaxLength="350" />
+    <Property Name="ApplicantID" Type="nvarchar" MaxLength="250" />
+    <Property Name="NOK_FullName" Type="nvarchar" MaxLength="150" />
+    <Property Name="NOK_Relationship" Type="nvarchar" MaxLength="150" />
+    <Property Name="NOK_PhoneNumber" Type="nvarchar" MaxLength="150" />
+    <Property Name="NOK_EmailAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="NOK_HomeAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="LoanAmount" Type="float" />
+    <Property Name="LoanTenure" Type="int" />
+    <Property Name="RepaymentMethod_FK" Type="int" />
+    <Property Name="ExistingLoan" Type="bit" />
+    <Property Name="ExistingLoan_OutstandingAmount" Type="float" />
+    <Property Name="ExistingLoan_NoOfMonthsLeft" Type="int" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="350" />
+    <Property Name="BVN" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ApplicationStatus_FK" Type="int" />
+    <Property Name="LoanComment" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoanApproval">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanApplication_FK" Type="int" />
+    <Property Name="CommentBy" Type="nvarchar" MaxLength="250" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="ApplicationStatus_FK" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="LoanLedger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Institution_FK" Type="int" />
+    <Property Name="ApplicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="TranxDate" Type="datetime" />
+    <Property Name="Debit" Type="float" />
+    <Property Name="Credit" Type="float" />
+    <Property Name="RefNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PartnerRefNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="LoanProduct">
+    <Key>
+      <PropertyRef Name="Institution_FK" />
+      <PropertyRef Name="LoanProduct" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Institution_FK" Type="int" Nullable="false" />
+    <Property Name="LoanType_FK" Type="int" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoanProduct" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LoanAmount" Type="float" />
+    <Property Name="InterestValue" Type="float" />
+    <Property Name="RepaymentAmount" Type="float" />
+    <Property Name="LoanTenure_FK" Type="int" />
+    <Property Name="MaxLoanTenure" Type="int" />
+    <Property Name="GracePeriod" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_FK" Type="int" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="LoansLedger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicantID" Type="nvarchar" MaxLength="150" />
+    <Property Name="Institution_FK" Type="int" />
+    <Property Name="trnDate" Type="datetime" />
+    <Property Name="Debit" Type="float" />
+    <Property Name="Credit" Type="float" />
+    <Property Name="RefNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="LastUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LoanTenure">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="Audit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoanType">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="MaritalStatus">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="MeansOfIdentification">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="NigerianState">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Audit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsVisible" Type="int" Nullable="false" />
+    <Property Name="Country_FK" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="PageName" />
+    </Key>
+    <Property Name="PageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PageUrl" Type="nvarchar(max)" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageDescription" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="PageAuthentication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Page_FK" Type="int" />
+    <Property Name="Role_FK" Type="int" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="PartnerID" />
+      <PropertyRef Name="PartnerKey" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_FK" Type="int" />
+    <Property Name="PartnerID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartnerKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactAddress" Type="nvarchar" MaxLength="250" />
+    <Property Name="TokenVal" Type="nvarchar" MaxLength="250" />
+    <Property Name="myTokenTime" Type="float" />
+  </EntityType>
+  <EntityType Name="RepaymentMethod">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StudentLoanDetail">
+    <Key>
+      <PropertyRef Name="LoanApplication_FK" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoanApplication_FK" Type="int" Nullable="false" />
+    <Property Name="MatricNumber" Type="nvarchar" MaxLength="150" />
+    <Property Name="Institution" Type="nvarchar" MaxLength="350" />
+    <Property Name="Faculty" Type="nvarchar" MaxLength="250" />
+    <Property Name="Department" Type="nvarchar" MaxLength="250" />
+    <Property Name="CourseOfStudy" Type="nvarchar" MaxLength="250" />
+    <Property Name="InstitutionAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="YearOfAdmission" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearOfExpectedCompletion" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentLevel_FK" Type="int" />
+    <Property Name="CurrentSemester_FK" Type="int" />
+    <Property Name="ValueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentRecord">
+    <Key>
+      <PropertyRef Name="Institution_FK" />
+      <PropertyRef Name="MatriculationNumber" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Institution_FK" Type="int" Nullable="false" />
+    <Property Name="MatriculationNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Othernames" Type="nvarchar" MaxLength="150" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="Faculty" Type="nvarchar" MaxLength="150" />
+    <Property Name="Deparment" Type="nvarchar" MaxLength="150" />
+    <Property Name="CreditLimit" Type="float" />
+    <Property Name="NoOfBorrows" Type="int" />
+    <Property Name="AmountBorrowed" Type="float" />
+    <Property Name="OutstandingBalance" Type="float" />
+    <Property Name="CustomMessage" Type="nvarchar" MaxLength="500" />
+    <Property Name="Registered" Type="int" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVisible" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="varchar" MaxLength="100" />
+    <Property Name="Lastname" Type="varchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PaswordVal" Type="varchar(max)" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UserAddress" Type="nvarchar" MaxLength="250" />
+    <Property Name="ResetPassword" Type="int" />
+    <Property Name="ValueDate" Type="datetime" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="PinNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title_FK" Type="int" />
+    <Property Name="GenderID" Type="int" />
+    <Property Name="EmploymentStatus_FK" Type="int" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferralCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="MyReferralCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Audit" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferralLevel" Type="int" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="User_FK" />
+      <PropertyRef Name="Role_FK" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_FK" Type="int" Nullable="false" />
+    <Property Name="Role_FK" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="int" />
+    <Property Name="ValueDate" Type="datetime" />
+  </EntityType>
+  <Function Name="UpdatePartner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="myTimer" Type="float" Mode="In" />
+    <Parameter Name="myTokenVal" Type="nvarchar" Mode="In" />
+    <Parameter Name="partnerID" Type="nvarchar" Mode="In" />
+    <Parameter Name="RecID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="UvlotModelStoreContainer">
+    <EntitySet Name="AccomodationType" EntityType="Self.AccomodationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationStatus" EntityType="Self.ApplicationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BanksManager" EntityType="Self.BanksManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployerLoanDetail" EntityType="Self.EmployerLoanDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmploymentStatus" EntityType="Self.EmploymentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution" EntityType="Self.Institution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LGA" EntityType="Self.LGA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanApplication" EntityType="Self.LoanApplication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanApproval" EntityType="Self.LoanApproval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanLedger" EntityType="Self.LoanLedger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanProduct" EntityType="Self.LoanProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoansLedger" EntityType="Self.LoansLedger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanTenure" EntityType="Self.LoanTenure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanType" EntityType="Self.LoanType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaritalStatus" EntityType="Self.MaritalStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MeansOfIdentification" EntityType="Self.MeansOfIdentification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NigerianState" EntityType="Self.NigerianState" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Page" EntityType="Self.Page" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageAuthentication" EntityType="Self.PageAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepaymentMethod" EntityType="Self.RepaymentMethod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentLoanDetail" EntityType="Self.StudentLoanDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentRecord" EntityType="Self.StudentRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UvlotModelStoreContainer" CdmEntityContainer="UvlotEntities">
+    <EntitySetMapping Name="AccomodationTypes">
+      <EntityTypeMapping TypeName="UvlotModel.AccomodationType">
+        <MappingFragment StoreEntitySet="AccomodationType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationStatus">
+      <EntityTypeMapping TypeName="UvlotModel.ApplicationStatu">
+        <MappingFragment StoreEntitySet="ApplicationStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="UvlotModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployerLoanDetails">
+      <EntityTypeMapping TypeName="UvlotModel.EmployerLoanDetail">
+        <MappingFragment StoreEntitySet="EmployerLoanDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoanApplication_FK" ColumnName="LoanApplication_FK" />
+          <ScalarProperty Name="EmployerID" ColumnName="EmployerID" />
+          <ScalarProperty Name="OfficialEmailAddress" ColumnName="OfficialEmailAddress" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="EmploymentStatus_FK" ColumnName="EmploymentStatus_FK" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="NetMonthlyIncome" ColumnName="NetMonthlyIncome" />
+          <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+          <ScalarProperty Name="ClosestBusStop" ColumnName="ClosestBusStop" />
+          <ScalarProperty Name="LGA_FK" ColumnName="LGA_FK" />
+          <ScalarProperty Name="LengthOfServiceInMth" ColumnName="LengthOfServiceInMth" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmploymentStatus">
+      <EntityTypeMapping TypeName="UvlotModel.EmploymentStatu">
+        <MappingFragment StoreEntitySet="EmploymentStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institutions">
+      <EntityTypeMapping TypeName="UvlotModel.Institution">
+        <MappingFragment StoreEntitySet="Institution">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="InstitutionAddress" ColumnName="InstitutionAddress" />
+          <ScalarProperty Name="InstitutionEmailAddress" ColumnName="InstitutionEmailAddress" />
+          <ScalarProperty Name="InstitutionPhoneNo" ColumnName="InstitutionPhoneNo" />
+          <ScalarProperty Name="ContactPhoneNo" ColumnName="ContactPhoneNo" />
+          <ScalarProperty Name="ContactEmailAddress" ColumnName="ContactEmailAddress" />
+          <ScalarProperty Name="HeadOfInstition" ColumnName="HeadOfInstition" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LGAs">
+      <EntityTypeMapping TypeName="UvlotModel.LGA">
+        <MappingFragment StoreEntitySet="LGA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="State_FK" ColumnName="State_FK" />
+          <ScalarProperty Name="Audit" ColumnName="Audit" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanApplications">
+      <EntityTypeMapping TypeName="UvlotModel.LoanApplication">
+        <MappingFragment StoreEntitySet="LoanApplication">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoanRefNumber" ColumnName="LoanRefNumber" />
+          <ScalarProperty Name="LoanProduct_FK" ColumnName="LoanProduct_FK" />
+          <ScalarProperty Name="Title_FK" ColumnName="Title_FK" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+          <ScalarProperty Name="Gender_FK" ColumnName="Gender_FK" />
+          <ScalarProperty Name="MaritalStatus_FK" ColumnName="MaritalStatus_FK" />
+          <ScalarProperty Name="MeansOfID_FK" ColumnName="MeansOfID_FK" />
+          <ScalarProperty Name="IdentficationNumber" ColumnName="IdentficationNumber" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="ClosestBusStop" ColumnName="ClosestBusStop" />
+          <ScalarProperty Name="StateofResidence_FK" ColumnName="StateofResidence_FK" />
+          <ScalarProperty Name="LGA_FK" ColumnName="LGA_FK" />
+          <ScalarProperty Name="AccomodationType_FK" ColumnName="AccomodationType_FK" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+          <ScalarProperty Name="NOK_FullName" ColumnName="NOK_FullName" />
+          <ScalarProperty Name="NOK_Relationship" ColumnName="NOK_Relationship" />
+          <ScalarProperty Name="NOK_PhoneNumber" ColumnName="NOK_PhoneNumber" />
+          <ScalarProperty Name="NOK_EmailAddress" ColumnName="NOK_EmailAddress" />
+          <ScalarProperty Name="NOK_HomeAddress" ColumnName="NOK_HomeAddress" />
+          <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+          <ScalarProperty Name="LoanTenure" ColumnName="LoanTenure" />
+          <ScalarProperty Name="RepaymentMethod_FK" ColumnName="RepaymentMethod_FK" />
+          <ScalarProperty Name="ExistingLoan" ColumnName="ExistingLoan" />
+          <ScalarProperty Name="ExistingLoan_OutstandingAmount" ColumnName="ExistingLoan_OutstandingAmount" />
+          <ScalarProperty Name="ExistingLoan_NoOfMonthsLeft" ColumnName="ExistingLoan_NoOfMonthsLeft" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="BVN" ColumnName="BVN" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="ApplicationStatus_FK" ColumnName="ApplicationStatus_FK" />
+          <ScalarProperty Name="LoanComment" ColumnName="LoanComment" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanApprovals">
+      <EntityTypeMapping TypeName="UvlotModel.LoanApproval">
+        <MappingFragment StoreEntitySet="LoanApproval">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoanApplication_FK" ColumnName="LoanApplication_FK" />
+          <ScalarProperty Name="CommentBy" ColumnName="CommentBy" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ApplicationStatus_FK" ColumnName="ApplicationStatus_FK" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanLedgers">
+      <EntityTypeMapping TypeName="UvlotModel.LoanLedger">
+        <MappingFragment StoreEntitySet="LoanLedger">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Institution_FK" ColumnName="Institution_FK" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+          <ScalarProperty Name="TranxDate" ColumnName="TranxDate" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="RefNumber" ColumnName="RefNumber" />
+          <ScalarProperty Name="PartnerRefNumber" ColumnName="PartnerRefNumber" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanProducts">
+      <EntityTypeMapping TypeName="UvlotModel.LoanProduct">
+        <MappingFragment StoreEntitySet="LoanProduct">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Institution_FK" ColumnName="Institution_FK" />
+          <ScalarProperty Name="LoanType_FK" ColumnName="LoanType_FK" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="LoanProduct1" ColumnName="LoanProduct" />
+          <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+          <ScalarProperty Name="InterestValue" ColumnName="InterestValue" />
+          <ScalarProperty Name="RepaymentAmount" ColumnName="RepaymentAmount" />
+          <ScalarProperty Name="LoanTenure_FK" ColumnName="LoanTenure_FK" />
+          <ScalarProperty Name="MaxLoanTenure" ColumnName="MaxLoanTenure" />
+          <ScalarProperty Name="GracePeriod" ColumnName="GracePeriod" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="User_FK" ColumnName="User_FK" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoansLedgers">
+      <EntityTypeMapping TypeName="UvlotModel.LoansLedger">
+        <MappingFragment StoreEntitySet="LoansLedger">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+          <ScalarProperty Name="Institution_FK" ColumnName="Institution_FK" />
+          <ScalarProperty Name="trnDate" ColumnName="trnDate" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="RefNumber" ColumnName="RefNumber" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanTenures">
+      <EntityTypeMapping TypeName="UvlotModel.LoanTenure">
+        <MappingFragment StoreEntitySet="LoanTenure">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="Audit" ColumnName="Audit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanTypes">
+      <EntityTypeMapping TypeName="UvlotModel.LoanType">
+        <MappingFragment StoreEntitySet="LoanType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaritalStatus">
+      <EntityTypeMapping TypeName="UvlotModel.MaritalStatu">
+        <MappingFragment StoreEntitySet="MaritalStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeansOfIdentifications">
+      <EntityTypeMapping TypeName="UvlotModel.MeansOfIdentification">
+        <MappingFragment StoreEntitySet="MeansOfIdentification">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NigerianStates">
+      <EntityTypeMapping TypeName="UvlotModel.NigerianState">
+        <MappingFragment StoreEntitySet="NigerianState">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Audit" ColumnName="Audit" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="Country_FK" ColumnName="Country_FK" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="UvlotModel.Page">
+        <MappingFragment StoreEntitySet="Page">
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="PageDescription" ColumnName="PageDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageAuthentications">
+      <EntityTypeMapping TypeName="UvlotModel.PageAuthentication">
+        <MappingFragment StoreEntitySet="PageAuthentication">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Page_FK" ColumnName="Page_FK" />
+          <ScalarProperty Name="Role_FK" ColumnName="Role_FK" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partners">
+      <EntityTypeMapping TypeName="UvlotModel.Partner">
+        <MappingFragment StoreEntitySet="Partner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_FK" ColumnName="User_FK" />
+          <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+          <ScalarProperty Name="PartnerKey" ColumnName="PartnerKey" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="TokenVal" ColumnName="TokenVal" />
+          <ScalarProperty Name="myTokenTime" ColumnName="myTokenTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepaymentMethods">
+      <EntityTypeMapping TypeName="UvlotModel.RepaymentMethod">
+        <MappingFragment StoreEntitySet="RepaymentMethod">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="UvlotModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentLoanDetails">
+      <EntityTypeMapping TypeName="UvlotModel.StudentLoanDetail">
+        <MappingFragment StoreEntitySet="StudentLoanDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoanApplication_FK" ColumnName="LoanApplication_FK" />
+          <ScalarProperty Name="MatricNumber" ColumnName="MatricNumber" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Faculty" ColumnName="Faculty" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="CourseOfStudy" ColumnName="CourseOfStudy" />
+          <ScalarProperty Name="InstitutionAddress" ColumnName="InstitutionAddress" />
+          <ScalarProperty Name="YearOfAdmission" ColumnName="YearOfAdmission" />
+          <ScalarProperty Name="YearOfExpectedCompletion" ColumnName="YearOfExpectedCompletion" />
+          <ScalarProperty Name="CurrentLevel_FK" ColumnName="CurrentLevel_FK" />
+          <ScalarProperty Name="CurrentSemester_FK" ColumnName="CurrentSemester_FK" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="ValueTime" ColumnName="ValueTime" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentRecords">
+      <EntityTypeMapping TypeName="UvlotModel.StudentRecord">
+        <MappingFragment StoreEntitySet="StudentRecord">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Institution_FK" ColumnName="Institution_FK" />
+          <ScalarProperty Name="MatriculationNumber" ColumnName="MatriculationNumber" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Faculty" ColumnName="Faculty" />
+          <ScalarProperty Name="Deparment" ColumnName="Deparment" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="NoOfBorrows" ColumnName="NoOfBorrows" />
+          <ScalarProperty Name="AmountBorrowed" ColumnName="AmountBorrowed" />
+          <ScalarProperty Name="OutstandingBalance" ColumnName="OutstandingBalance" />
+          <ScalarProperty Name="CustomMessage" ColumnName="CustomMessage" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="UvlotModel.Title">
+        <MappingFragment StoreEntitySet="Title">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="UvlotModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PaswordVal" ColumnName="PaswordVal" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="ResetPassword" ColumnName="ResetPassword" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="PinNumber" ColumnName="PinNumber" />
+          <ScalarProperty Name="Title_FK" ColumnName="Title_FK" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="EmploymentStatus_FK" ColumnName="EmploymentStatus_FK" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="ReferralCode" ColumnName="ReferralCode" />
+          <ScalarProperty Name="MyReferralCode" ColumnName="MyReferralCode" />
+          <ScalarProperty Name="Audit" ColumnName="Audit" />
+          <ScalarProperty Name="ReferralLevel" ColumnName="ReferralLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="UvlotModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_FK" ColumnName="User_FK" />
+          <ScalarProperty Name="Role_FK" ColumnName="Role_FK" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdatePartner" FunctionName="UvlotModel.Store.UpdatePartner" />
+    <EntitySetMapping Name="BanksManagers">
+      <EntityTypeMapping TypeName="UvlotModel.BanksManager">
+        <MappingFragment StoreEntitySet="BanksManager">
+          <ScalarProperty Name="ValueDate" ColumnName="ValueDate" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="ServiceResponse" ColumnName="ServiceResponse" />
+          <ScalarProperty Name="VerifiedStatus" ColumnName="VerifiedStatus" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="Nationlaity" ColumnName="Nationlaity" />
+          <ScalarProperty Name="EnrollmentBranch" ColumnName="EnrollmentBranch" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
